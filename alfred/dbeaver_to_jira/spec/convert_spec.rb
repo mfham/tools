@@ -6,7 +6,7 @@ RSpec.describe 'convert.rb' do
 
   def run_with_clipboard(input)
     `echo #{input.shellescape} | pbcopy`
-    `ruby #{script_path}`.chomp
+    `ruby #{script_path}`.force_encoding('UTF-8').chomp
   end
 
   describe '正常系' do
