@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# encoding: utf-8
 
 clipboard = `pbpaste`.force_encoding('UTF-8')
 lines = clipboard.strip.split("\n")
