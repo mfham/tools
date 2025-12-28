@@ -4,5 +4,6 @@
     "Ruby LSP RSpec": {
       "rspecCommand": "bundle exec rspec"
     }
-  }
+  },
+  "ruby.workingDirectory": "."
 }
