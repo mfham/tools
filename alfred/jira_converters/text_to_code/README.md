@@ -26,7 +26,7 @@
 2. `Language`: `/usr/bin/ruby`
 3. スクリプト内容:
 ```ruby
-load '/path/to/convert.rb'
+load '/path/to/tools/alfred/jira_converters/text_to_code/convert.rb'
 ```
 4. `with input as {query}` を選択
 5. `Running Instances`: `Sequentially` を選択（順次実行）

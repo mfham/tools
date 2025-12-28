@@ -26,7 +26,7 @@ DBeaverのSELECT結果をJIRAのテーブル形式に変換するAlfred Workflow
 2. `Language`: `/usr/bin/ruby`
 3. スクリプト内容:
 ```ruby
-load '/path/to/convert.rb'
+load '/path/to/tools/alfred/jira_converters/dbeaver_to_jira/convert.rb'
 ```
 4. `with input as {query}` を選択
 5. `Running Instances`: `Sequentially` を選択（順次実行）
