@@ -18,3 +18,8 @@ DBeaverのSELECT結果をJIRAのテーブル形式に変換するWorkflow
 テキストをJIRAのquoteブロック形式に変換するWorkflow
 
 詳細: [alfred/jira_converters/text_to_quote/README.md](alfred/jira_converters/text_to_quote/README.md)
+
+### markdown_to_slack_message
+MarkdownをSlackメッセージ用のmrkdwn形式に変換するWorkflow
+
+詳細: [alfred/jira_converters/markdown_to_slack_message/README.md](alfred/jira_converters/markdown_to_slack_message/README.md)
