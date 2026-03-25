@@ -4,6 +4,11 @@
 input_text = `pbpaste`.strip
 
 # Markdown を Slack mrkdwn 形式に変換
+def indent_convert(spaces)
+  level = spaces.length / 2
+  '    ' * level
+end
+
 def markdown_to_mrkdwn(text)
   result = text.dup
   
@@ -22,12 +27,12 @@ def markdown_to_mrkdwn(text)
   # 取り消し線 ~~text~~ を ~text~ に変換
   result.gsub!(/~~(.+?)~~/, '~\1~')
   
-  # チェックリスト - [x] を • ✓ に、- [ ] を • に変換
-  result.gsub!(/^(\s*)[-*]\s+\[x\]\s+/, '\1• ✓ ')
-  result.gsub!(/^(\s*)[-*]\s+\[ \]\s+/, '\1• ')
+  # チェックリスト - [x] を * ✓ に、- [ ] を * に変換
+  result.gsub!(/^(\s*)[-*]\s+\[x\]\s+/) { "#{indent_convert($1)}* ✓ " }
+  result.gsub!(/^(\s*)[-*]\s+\[ \]\s+/) { "#{indent_convert($1)}* " }
   
-  # 箇条書き - を • に変換
-  result.gsub!(/^(\s*)[-*]\s+/, '\1• ')
+  # 箇条書き - を * に変換（インデント2スペース→4スペース）
+  result.gsub!(/^(\s*)[-*]\s+/) { "#{indent_convert($1)}* " }
   
   # コードブロックの言語指定を削除
   result.gsub!(/```\w+\n/, "```\n")
