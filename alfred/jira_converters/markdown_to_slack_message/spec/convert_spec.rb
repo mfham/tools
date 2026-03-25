@@ -69,13 +69,13 @@ RSpec.describe 'convert.rb' do
   describe 'リストの変換' do
     it '箇条書き（-）を変換する' do
       input = '- Item 1'
-      expected = '• Item 1'
+      expected = '* Item 1'
       expect(run_with_clipboard(input)).to eq(expected)
     end
 
     it '箇条書き（*）を変換する' do
       input = '* Item 1'
-      expected = '• Item 1'
+      expected = '* Item 1'
       expect(run_with_clipboard(input)).to eq(expected)
     end
 
@@ -91,8 +91,8 @@ RSpec.describe 'convert.rb' do
           - Nested item
       INPUT
       expected = <<~OUTPUT.chomp
-        • Item 1
-          • Nested item
+        * Item 1
+            * Nested item
       OUTPUT
       expect(run_with_clipboard(input)).to eq(expected)
     end
@@ -101,13 +101,13 @@ RSpec.describe 'convert.rb' do
   describe 'チェックリストの変換' do
     it '未完了のチェックリストを変換する' do
       input = '- [ ] Task'
-      expected = '• Task'
+      expected = '* Task'
       expect(run_with_clipboard(input)).to eq(expected)
     end
 
     it '完了したチェックリストを変換する' do
       input = '- [x] Done'
-      expected = '• ✓ Done'
+      expected = '* ✓ Done'
       expect(run_with_clipboard(input)).to eq(expected)
     end
   end
@@ -174,8 +174,8 @@ RSpec.describe 'convert.rb' do
       expected = <<~OUTPUT.chomp
         *Title*
         *Bold* and _italic_
-        • Item 1
-        • ✓ Done
+        * Item 1
+        * ✓ Done
         [link](https://example.com)
       OUTPUT
       expect(run_with_clipboard(input)).to eq(expected)
