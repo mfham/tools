@@ -1,0 +1,8 @@
+あなたはSlack MCPを使えます。
+#%{channel} チャンネルを検索してチャンネルIDを取得し、そのチャンネルのメッセージを読み込み、:%{trigger_emoji}: リアクションがついた最新の投稿を見つけて。
+見つけたら、その投稿のスレッドを読み込み、スレッド内で :%{action_emoji}: リアクションがついた最新の投稿を見つけて。
+結果を以下の形式で出力して:
+THREAD_TS: <:%{trigger_emoji}: がついた投稿のtimestamp>
+CHANNEL_ID: <チャンネルID>
+CONTENT: <:%{action_emoji}: がついた投稿の本文>
+もし :%{trigger_emoji}: 付きの投稿がない、または :%{action_emoji}: 付きの投稿がない場合は NOT_FOUND と出力して。

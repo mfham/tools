@@ -1,0 +1,4 @@
+あなたはSlack MCPを使えます。
+以下の内容を チャンネル(%{channel_id})のスレッド(thread_ts: %{thread_ts})に投稿して。
+投稿内容:
+%{message}
